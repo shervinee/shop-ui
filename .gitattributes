@@ -1,0 +1,14 @@
+* text=auto eol=lf
+*.sh text eol=lf
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.jar binary
+*.war binary
+*.zip binary
+*.gz  binary
+*.7z  binary
