@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+# Husky v10+ style: no husky.sh sourcing; run your commands directly
+
+# Ensure local node binaries are on PATH (works even if npx isn't available)
+export PATH="./node_modules/.bin:$PATH"
+
+# If you installed Node via Homebrew on Apple Silicon, include its bin dir:
+[ -d "/opt/homebrew/bin" ] && export PATH="/opt/homebrew/bin:$PATH"
+
+# Run lint-staged (formats + lints only staged files)
+lint-staged
