@@ -13,5 +13,6 @@
   // flat-config ESLint (since you use eslint.config.mjs)
   "eslint.experimental.useFlatConfig": true,
   // make sure ESLint lints these
-  "eslint.validate": ["typescript", "html", "javascript"]
+  "eslint.validate": ["typescript", "html", "javascript"],
+  "prettier.requireConfig": true
 }
