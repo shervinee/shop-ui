@@ -1,0 +1,13 @@
+name: Shop UI
+
+on:
+  workflow_dispatch:
+
+  pull_request:
+    paths:
+      - "shop-ui/**"
+  push:
+    branches:
+      - main
+      - develop
+      - hotfix-*
