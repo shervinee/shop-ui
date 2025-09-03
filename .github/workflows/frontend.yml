@@ -24,6 +24,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: List files for sanity
+        run: |
+          pwd
+          ls -la
+          ls -la shop-ui || true
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
