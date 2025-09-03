@@ -36,6 +36,6 @@ jobs:
       - name: Lint
         run: npm run lint
       - name: Prettier Check
-        run: npm run format:check
+        run: npm run format:check --if-present
       - name: Unit Tests (optional)
         run: npm test --if-present -- --watch=false

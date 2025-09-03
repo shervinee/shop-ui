@@ -11,6 +11,7 @@
     "lint": "ng lint",
     "lint-fix": "ng lint --fix",
     "format": "prettier --write",
+    "format:check": "prettier --check",
     "fix": "npm run format && npm run lint:fix",
     "prepare": "husky"
   },
