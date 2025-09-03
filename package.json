@@ -6,7 +6,6 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
     "serve:ssr:shop-frontend": "node dist/shop-frontend/server/server.mjs",
     "lint": "ng lint",
     "lint-fix": "ng lint --fix",
