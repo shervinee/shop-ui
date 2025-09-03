@@ -11,6 +11,10 @@ on:
       - develop
       - hotfix-*
 
+concurrency:
+  group: shop-ui/${{ github.workflow }}@{{ github.ref_name }}
+  cancel-in-progress: true
+
 jobs:
   build_test_lint:
     runs-on: ubuntu-latest
