@@ -55,7 +55,7 @@ Add to `package.json` (if not present):
 
 ```ts
 export const environment = {
-  apiBaseUrl: 'http://localhost:8080',
+  apiBaseUrl: "http://localhost:8080",
 };
 ```
 
@@ -88,3 +88,5 @@ src/app/
 docker build -t shop-frontend .
 docker run -p 4000:4000 shop-frontend
 ```
+
+### CI by Github Actions
