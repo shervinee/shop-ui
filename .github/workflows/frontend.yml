@@ -21,20 +21,20 @@ jobs:
     env:
       CI: "true"
 
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-        - name: Setup Node
-          uses: actions/setup-node@v4
-          with:
-            node-version: "22.x"
-            cache: npm
-            cache-dependency-path: shop-ui/package-lock.json
-        - name: Install dependencies
-          run: npm ci
-        - name: Lint
-          run: npm run lint
-        - name: Prettier Check
-          run: npm run format:check
-        - name: Unit Tests (optional)
-          run: npm test --if-present -- --watch=false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+          cache: npm
+          cache-dependency-path: shop-ui/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Prettier Check
+        run: npm run format:check
+      - name: Unit Tests (optional)
+        run: npm test --if-present -- --watch=false
