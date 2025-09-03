@@ -11,3 +11,12 @@ on:
       - main
       - develop
       - hotfix-*
+
+jobs:
+  build_test_lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: shop-ui
+    env:
+      CI: "true"
