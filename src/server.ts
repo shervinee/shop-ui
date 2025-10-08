@@ -5,12 +5,15 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 import { join } from 'node:path';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+const apiBaisc = process.env['API_BASIC'] ?? 'admin:admin';
+const basicHeader = 'Basic ' + Buffer.from(apiBaisc.toString('base64'));
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -32,6 +35,18 @@ app.use(
     maxAge: '1y',
     index: false,
     redirect: false,
+  }),
+);
+
+app.use(
+  '/api',
+  createProxyMiddleware({
+    target: 'http://http://localhost:8080',
+    changeOrigin: true,
+    secure: false,
+    onProxyReq(proxyReq) {
+      proxyReq.setHeader('Authorization', basicHeader);
+    },
   }),
 );
 
