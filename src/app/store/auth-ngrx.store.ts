@@ -21,7 +21,7 @@ export const initialState: AuthState = {
   error: null,
 };
 
-// for later use of having injection token overriding the initial state if needed
+// for later use of having injection token overriding the initial state if needed, this would get the initial values and add things too them by the component if needed
 export const AUTH_INITIAL_STATE = new InjectionToken<Partial<AuthState>>(
   'AUTH_INITIAL_STATE',
 );
